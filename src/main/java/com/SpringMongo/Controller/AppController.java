@@ -19,10 +19,21 @@ public class AppController {
 	@Autowired
 	private AppService appService;
 
+	/**
+	 * This Method will call MySql DB
+	 * @param Id
+	 * @return
+	 */
 	@RequestMapping(value = CommonConstants.USER_DETAILS , method = RequestMethod.GET)
 	public JsonResponse newUser(@PathVariable(CommonConstants.Id) Integer Id) {
 		return appService.getUserDetails(Id);
 	}
+	/**
+	 * this method will call MongoDB
+	 * @param param1
+	 * @param param2
+	 * @return
+	 */
 	@RequestMapping(value = CommonConstants.CAR_DETAILS , method = RequestMethod.GET)
 	public JsonResponse newUser(@PathVariable(CommonConstants.PARA1) String param1, 
 			@PathVariable(CommonConstants.PARA2) String param2) {
